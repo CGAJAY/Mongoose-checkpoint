@@ -51,3 +51,14 @@ createManyPeople([
 		favoriteFoods: ["Burgers", "Pasta"],
 	},
 ]);
+
+// Find All People with a Given Name
+const findPeopleByName = (name) => {
+	Person.find({ name }, (err, people) => {
+		if (err) console.error(err);
+		else console.log("People found:", people);
+	});
+};
+
+// Example
+findPeopleByName("John Doe");
