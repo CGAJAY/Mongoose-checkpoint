@@ -29,3 +29,25 @@ const createAndSavePerson = () => {
 		else console.log("Person saved:", data);
 	});
 };
+
+// Create and save a multiple persons
+const createManyPeople = (arrayOfPeople) => {
+	Person.create(arrayOfPeople, (err, people) => {
+		if (err) console.error(err);
+		else console.log("People saved:", people);
+	});
+};
+
+// Example
+createManyPeople([
+	{
+		name: "Alice",
+		age: 30,
+		favoriteFoods: ["Salad", "Pizza"],
+	},
+	{
+		name: "Bob",
+		age: 22,
+		favoriteFoods: ["Burgers", "Pasta"],
+	},
+]);
